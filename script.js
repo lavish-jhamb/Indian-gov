@@ -20,16 +20,11 @@ function openTabs(e, tabId) {
 // Get all Accordion and Panel
 let accHeading = document.querySelectorAll(".accordion");
 let accPanel = document.querySelectorAll(".accordion-panel");
-// document.addEventListener("domContentLoaded", showPanel)
 
 for (let i = 0; i < accHeading.length; i++) {
     // Execute whenever an accordion is clicked 
     accHeading[i].onclick = function () {
-        // if (this.nextElementSibling.style.maxHeight) {
-        //     // hidePanels();     // Hide All open Panels 
-        // } else {
-            showPanel(this);  // Show the panel
-        // }
+            showPanel(this);
     };
 }
 
