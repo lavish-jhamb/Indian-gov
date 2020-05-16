@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    margin: 4em auto;
+    text-align: center;
+}
+.block-content{
+    border-bottom: solid 5px #ddd;
+    position: relative;
+    padding-bottom: 1em;
+    margin-bottom:2em;
+}
+.block-content h3{
+    font-size:1.2em;
+}
+
+.block-content h3::after{
+    display: block;
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 147px;
+    border-bottom: 5px solid #4d77b3;
+    left: 33%;
+    bottom:-9%;
+    background: url(/img/Icon\ ionic-md-arrow-dropup.png) no-repeat top center;
+}
+
+/* TABS PANEL */
+.tabs{
+    background-color: #f1f2f1;
+    overflow: hidden;
+}
+.tabs .tab-link{
+    border: none;
+    outline: none;
+    padding:8px 18px;
+    float: left;
+    cursor: pointer;
+    font-size: 1em;
+}
+.active-tabs{
+    background-color:#ddd;
+}
+.tab-content{
+    border: solid 1px silver;
+    padding-bottom: 2.7em;
+    height: 300px;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.tab-content ul {
+    /* border: solid 1px red; */
+    list-style-type: none;
+    /* overflow:auto; */
+    /* max-height:300px; */
+}
+.tab-content ul li{
+    display: flex;
+    margin: 0.8em auto;
+    padding: 0 0.5em;
+}
+
+.tab-content ul a{
+    color: black;
+    display: inline-block;
+    /* adjust text alingment */
+    /* text-align: left; */
+}
+.tab-content ul  li::before{
+    content: "\f101";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: black;
+    margin-right: 5px;
+}
+
+/* ACCORDION MENU */
+.accordion {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px 12px;
+    /* border-bottom:solid 0.5px silver; */
+    cursor: pointer;
+    text-align: left;
+    font-size: 1em;
+}
+.accordion-panel ul{
+    list-style-type: none;
+}
+.accordion-panel ul li{
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin: 0.5em 0;
+}
+.accordion-panel ul li::before{
+    content: "\f101";
+    font-family:'Font Awesome 5 Free';
+    font-weight: 900;
+    color: black;
+    margin-right: 5px;
+}
+.accordion-panel ul li a {
+    /* display: inline-block; */
+    color: black;
+}
+
+  /* Change color of the heading and icon (on hover and click) */
+.active-accordion, .accordion:hover, .accordion:hover::after {
+    background-color: #ddd;
+    color: black;
+}
+
+  /* Add "plus" sign (+) after Accordion */
+.accordion::after {
+    content: '\f055';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: black;
+    float: right;
+}
+
+  /* Add "minus" sign (-) after Accordion (when accordion is active) */
+.active-accordion::after {
+    content: '\f056';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: black;
+    float: right;
+}
+
+  /* Style the accordion panel */
+.accordion-panel {
+    border: solid 1px silver;
+    padding: 0 0.4em;
+    scrollbar-width: thin;
+    overflow: auto;
+    transition: max-height 0.3s ease-out;
+    max-height:0px;
+}
+.accordion-content{
+    height: 245px;
+}
+.col-1, .col-2{
+    margin:2em 0;
+}
+
+@media screen and (min-width:626px){
+    .container{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-column-gap:2em;
+    }
+    .block-content h3::after{
+        left:29%;
+    }
+}
+
+@media screen and (min-width:792px){
+    .block-content h3::after{
+        left:39%;
+    }
+} 
+
